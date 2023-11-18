@@ -19,7 +19,8 @@ const questions = [
         id: "ethnicity",
         prompt: "What is your ethnicity?",
         type: "radio",
-        options: ["Man","Woman","Prefer not to say"] //TODO
+        options: ["Asian or Asian British","Black, Black British, Caribbean or African","Mixed or multiple ethnic groups","White","Other ethnic group"],
+        long: true,
     },
     {   
         id: "morningCondition",
@@ -35,6 +36,38 @@ const questions = [
         options: ["an oily forehead, chin, and nose","dryness with a tight feeling","overall oiliness","nothing worth mentioning"],
         long: true,
     },
+    {
+        id: "laterCondition",
+        prompt: "Later in the day I observe...",
+        type: "radio",
+        options: ["an oily forehead, chin, and nose","dryness with a tight feeling","overall oiliness","nothing worth mentioning"],
+        long: true,
+    },
+    {
+        id: "skinNeeds",
+        prompt: "What are your skin needs?",
+        type: "checkbox",
+        options: ["Hydration","Anti-aging","Glow & radiance","Pore refining","Even skin tone","Blemish control","Sun protection","Dark Circle Treatment","Oil Control","Acne Treatment","Blackhead Treatment","Brightening","Illuminating","Lifting","Firmness & Elasticity","Long Stay/Wear","Hyperpigmentation Treatment","Puffiness Relief","Redness Relief","Revitalise / Refresh","T-Zone Mattening","Hair growth (Lashes, Brows, or Beard)","Brightening"],
+        long: true,
+    },
+    {
+        id: "allergiesBool",
+        prompt: "Do you have allergies?",
+        type: "radio",
+        options: ["Yes, No"],
+    },
+    {
+        id: "allergies",
+        prompt: "If yes, what are you allergic to?",
+        type: "checkbox",
+        options: ["Fragrances","Alcohols","Nuts","Pigments","Dyes","Oils","Silicones","I don't know","I know the specific INCI ingredient I'm allergic to"]
+    },
+    {
+        id: "productValue",
+        prompt: "Do you value any of the below in a product?",
+        type: "checkbox",
+        options: ["Cruelty Free","Non-comedogenic","100% Natural","Paraben-free","Alcohol-free","Micro-plastic-free","Vegan","No"]
+    }
 ]
 
 exports = module.exports = function (req, res) {

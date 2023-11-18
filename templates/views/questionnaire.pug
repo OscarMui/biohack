@@ -38,27 +38,18 @@ mixin oneToFive(q,i)
 
 block content
     .container
-        h1.text-center More about you...
-
         if method == "POST"
-            h1 submitted
-            p=body
-            //- p=res
-            //- if body&&body.hasError
-            //-     h1 Error
-            //-     p.lead=body.errorMsg
-                
-            //- else if !nums || !body
-            //-     h1 Error
-            //-     p.lead An unexpected error has occured.
-            //- else
-            //-     h1 Result
-            //-     p=nums
+            h1 Submitted 
+
+            .text-center
+            p Click to download the report
+
+            a(href="assets/Group 14-4.pdf"): i.fa-solid.fa-2xl.fa-cloud-arrow-down
 
         else
             form#questionnaireForm(method='post')
                 .form-group#general
-                
+                    h1.text-center More about you...
                     br
                 
                     - let i=0;
@@ -75,6 +66,16 @@ block content
                                     if q.long
                                         .mt-2
                                     - j++;
+                        else if q.type == "checkbox"
+                            - let j = 0;
+                            div.centerRadio
+                                each o in q.options
+                                    .form-check.form-check-inline
+                                        input.form-check-input.q-radio(type="checkbox" name=q.id id="radioQuestion"+i+"Option"+j value=j)
+                                        label.form-check-label.q-label(for="radioQuestion"+i+"Option"+j)=o
+                                    if q.long && j%3 == 2
+                                        .mt-2
+                                    - j++;
                         else
                             h1 TODO
                         br
@@ -83,5 +84,9 @@ block content
                 #captures
                     video#videoElement(width="400" height="300" autoplay)
                     canvas#canvas(width="400" height="300")
+                    
                 br
-                div.text-center: button#generateButton.btn(type="submit") Submit
+                .text-center
+                    button.btn#captureButton(onclick="onCapture()" type="button") Capture 
+                    h3.d-none#capturedInfo Image captured! Click "Submit" to continue.
+                    button.d-none#generateButton.btn(type="submit") Submit
