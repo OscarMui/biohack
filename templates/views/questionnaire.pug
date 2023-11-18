@@ -39,7 +39,6 @@ mixin oneToFive(q,i)
 block content
     .container
         h1.text-center More about you...
-        p.text-center Let us analyse your carbon footprint by f illing in a short questionnaire! 
 
         if method == "POST"
             h1 submitted
@@ -81,32 +80,8 @@ block content
                         br
                         br
                         -i++;
-
-
-                //- p Minimum Number: &nbsp; 
-                //-     input#minNum.form-control(type="number" name="minNum" value=0 min=0)
-                //-     span &nbsp;
-                //-     i.fas(data-toggle="modal" data-target="#minModal" class="fa-question-circle")
-                //-     +modalBoxDark("minModal","Minimum Number")
-                //-         p Minimum bound of the random number.
-                //- p Maximum Number: &nbsp; 
-                //-     input#maxNum.form-control(type="number" name="maxNum" value=100 min=0)
-                //-     span &nbsp;
-                //-     i.fas(data-toggle="modal" data-target="#maxModal" class="fa-question-circle")
-                //-     +modalBoxDark("maxModal","Maximum Number")
-                //-         p Maximum bound of the random number.
-                //- p Number of Random Numbers: &nbsp; 
-                //-     select#count.form-control(name="count")
-                //-         -let i=1;
-                //-         while i<=10
-                //-             if i == 1
-                //-                 option(selected='selected')=1
-                //-             else
-                //-                 option=i
-                //-             - i++;
-                //-     span &nbsp;
-                //-     i.fas(data-toggle="modal" data-target="#countModal" class="fa-question-circle")
-                //-     +modalBoxDark("countModal","Number of Random Numbers")
-                //-         p Number of random numbers required.
+                #captures
+                    video#videoElement(width="400" height="300" autoplay)
+                    canvas#canvas(width="400" height="300")
                 br
                 div.text-center: button#generateButton.btn(type="submit") Submit
