@@ -1,0 +1,41 @@
+extends ../layouts/default
+
+block js
+
+block append variables 
+	- var currentPage = "tasks";
+
+block content
+
+	.container
+		h2.mt-5 Current Tasks
+		.row.cards-row
+			each task in tasks 
+				.col-12.col-md-6.col-xl-4.my-4.cards-col
+					.card
+						.card-header
+							.progress
+								.progress-bar(role="progressbar" style="width:"+(task.completed/task.max*100)+"%"  aria-valuenow=task.completed aria-valuemin="0" aria-valuemax=task.max)
+						img.card-image-top(src="/images/tasks/img"+task.templateId+".jpeg").w-100
+						.card-body
+							.card-text
+								h4.taskDesc=task.description
+
+								.info-group
+									i.fas.fa-angle-double-down.fa-lg
+									img(src="/images/carbonFootprint.png" width="20")
+									h4=task.carbonSavings.toFixed(2) + " kg"
+
+								.info-group
+									i.fas.fa-angle-double-down.fa-lg
+									i.fas.fa-trash.fa-lg
+									h4=task.wasteSavings.toFixed(2) + " kg"
+
+								.info-group
+									img(src="/images/star.png" width="20")
+									h4="+" + task.points
+
+								br
+								a(href="/tasks/"+task.id) Click to report progress
+			
+							

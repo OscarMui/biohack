@@ -1,0 +1,64 @@
+#home, #report{
+    #body{
+        margin-top: 0;
+    }
+    #login-bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        min-height: 700px;
+        object-fit: cover;
+        left: 0;
+        top: 0;
+        z-index: 0;
+    }
+    .wrap {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        min-height: 700px;
+        background: @primary-color-green;
+        background-image: radial-gradient(closest-corner,rgba(0, 28, 85,0) 60%,rgba(0, 28, 85,.5)),linear-gradient(to top left,#1F487E,#00ae5b 100%);
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        display: -ms-flexbox;
+        justify-content: center;
+        align-items: center;
+    }
+    #middleWhite{
+        .container{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+        }
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        z-index: 10;
+        background-color: @white-theme-bg-color;
+        width: 500px;
+        height: 400px;
+        color: #000;
+        display: flex;
+        justify-content: center;
+        
+    }
+    .yesButton{
+        text-decoration: none;
+        color: #FFF;
+        background-color: @primary-color-green;
+        padding: 18px 55px;
+        display: inline-block;
+        border-radius: 25px;
+        font-size: 16px;
+        letter-spacing: 3.5px;
+        text-transform: uppercase;
+    }
+    p{
+        color: #555;
+        font-size: 1.5rem;
+    }
+}

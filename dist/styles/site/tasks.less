@@ -1,0 +1,84 @@
+#tasks{
+    #body{
+        margin-top: 0;
+    }
+    
+    
+}
+
+#report, #tasks {
+    .cards-row{
+        margin-top: -15px;
+        .cards-col{
+            display: flex;
+            align-items: stretch;
+            width: 100%;
+        }
+    }
+    .card-body{
+        flex-grow: 1;
+    }
+    .card{
+        width:100%;
+    }
+    .card-iamge-top{
+        flex-grow: 0;
+    }
+    .card{
+        border: 2px solid #AAA;
+        // background-color: #FFF;
+        margin-top: 2rem;
+    }
+    .card-header:first-child{
+        border-radius: 0;
+    }
+    .card-header h3{
+        color: #FFF;
+        text-align: center;
+    }
+    .card-header{
+        padding: 0;
+        background-color: #555;
+    }
+    .progress{
+        border-radius: 0;
+    }
+    .progress-bar{
+        background-color: @primary-color-green;
+    }
+    .progress-bar-blue{
+        background-color: #007bff;
+    }
+    .taskDesc{
+        min-height: 87px;
+    }
+    .card-image-top{
+        object-fit: fill;
+        height: 200px;
+        object-fit: cover;
+    }
+    .info-group{
+        margin-top: 1rem;
+        *{
+            display: inline-block;
+        }
+        img, i{
+            margin-right: 20px;
+        }
+        i{
+            color: @primary-color-green;
+        }
+        h4{
+            color: #555;
+            position: relative;
+            top: 5px;
+        }
+    }
+    h2.mt-5{
+        margin-top: 1rem!important;
+        text-align: center;
+    }
+    .cards-row, #tasks .cards-row {
+        margin-top: -30px;
+    }
+}
