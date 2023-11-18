@@ -3,28 +3,34 @@ const {submitQuestionnaire, userCallback} = require("../api/post");
 
 const questions = [
     {
-        name: "I am a",
+        id: "gender",
+        prompt: "I am a",
         type: "radio",
-        options: ["Man","Woman","Prefer not to say"]
+        options: ["Man","Woman","Prefer not to say"],
+        
     },
     {
-        name: "Let us know your age",
-        type: "list",
-        range: [0,100],
+        id: "age",
+        prompt: "Let us know your age",
+        type: "radio",
+        options: ["17 or below","18-25","26-30","31-40","41-50","51-60","60 or above"]
     },
     {
-        name: "What is your ethnicity?",
+        id: "ethnicity",
+        prompt: "What is your ethnicity?",
         type: "radio",
         options: ["Man","Woman","Prefer not to say"] //TODO
     },
-    {
-        name: "In the morning, my facial skin feels...",
+    {   
+        id: "morningCondition",
+        prompt: "In the morning, my facial skin feels...",
         type: "radio",
         options: ["Shiny with big pores","Dry, tight, or flaky","Normal"],
         long: true,
     },
     {
-        name: "Later in the day I observe...",
+        id: "laterCondition",
+        prompt: "Later in the day I observe...",
         type: "radio",
         options: ["an oily forehead, chin, and nose","dryness with a tight feeling","overall oiliness","nothing worth mentioning"],
         long: true,
@@ -35,15 +41,17 @@ exports = module.exports = function (req, res) {
     console.log("QUESTIONNAIRE",req.method);
     // console.log(req.body);
 
-    console.log(questions)
+    // console.log(questions)
     if(req.method=="GET"){
         res.render("questionnaire", {
             questions: questions,
             method: req.method
         });
     }else{
+        console.log(req.body)
         res.render("questionnaire",{
-            method: req.method
+            method: req.method,
+            body: req.body,
         })
     }
 
