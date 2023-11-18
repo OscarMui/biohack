@@ -1,6 +1,3 @@
-const {getQuestions} = require("../api/get");
-const {submitQuestionnaire, userCallback} = require("../api/post");
-
 const questions = [
     {
         id: "gender",
@@ -54,13 +51,14 @@ const questions = [
         id: "allergiesBool",
         prompt: "Do you have allergies?",
         type: "radio",
-        options: ["Yes, No"],
+        options: ["Yes", "No"],
     },
     {
         id: "allergies",
         prompt: "If yes, what are you allergic to?",
         type: "checkbox",
-        options: ["Fragrances","Alcohols","Nuts","Pigments","Dyes","Oils","Silicones","I don't know","I know the specific INCI ingredient I'm allergic to"]
+        options: ["Fragrances","Alcohols","Nuts","Pigments","Dyes","Oils","Silicones","I don't know","I know the specific INCI ingredient I'm allergic to"],
+        long: true,
     },
     {
         id: "productValue",
