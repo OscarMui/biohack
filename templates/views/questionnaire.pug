@@ -70,10 +70,10 @@ block content
                             div.centerRadio
                                 each o in q.options
                                     .form-check.form-check-inline
-                                        input.form-check-input.q-radio(type="radio" name="option"+j id="radioOption"+i value=j)
+                                        input.form-check-input.q-radio(type="radio" name="question"+i id="radioOption"+i value=j)
                                         label.form-check-label.q-label(for="radioNo"+j)=o
                                     if q.long
-                                        br
+                                        .mt-2
                                     - j++;
                         else
                             h1 TODO
